@@ -10,6 +10,14 @@ const { REACT_APP_ENV = 'dev' } = process.env;
 export default defineConfig({
   /**
    * @name 开启 hash 模式
+   * @description 使用github pages功能时或和后端一起部署时配置base和publicPath
+   * @doc https://umijs.org/docs/api/config#base
+   * https://github.com/sorrycc/test-gh-pages/blob/master/.umirc.js
+   */
+  // base: '/example-web-v6/',
+  // publicPath: '/example-web-v6/',
+  /**
+   * @name 开启 hash 模式
    * @description 让 build 之后的产物包含 hash 后缀。通常用于增量发布和避免浏览器加载缓存。
    * @doc https://umijs.org/docs/api/config#hash
    */
