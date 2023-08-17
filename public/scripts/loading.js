@@ -2,7 +2,7 @@
  * loading 占位
  * 解决首次加载时白屏的问题
  */
- (function () {
+(function () {
   const _root = document.querySelector('#root');
   if (_root && _root.innerHTML === '') {
     _root.innerHTML = `
@@ -180,6 +180,7 @@
         height: 100%;
         min-height: 362px;
       ">
+        <img src="/logo.svg" alt="logo" />
         <div class="page-loading-warp">
           <div class="ant-spin ant-spin-lg ant-spin-spinning">
             <span class="ant-spin-dot ant-spin-dot-spin">
@@ -195,6 +196,9 @@
         </div>
         <div class="loading-sub-title">
           初次加载资源可能需要较多时间 请耐心等待
+        </div>
+        <div class="loading-sub-title">
+          蚂蚁集团 ☁️ 体验技术部
         </div>
       </div>
     `;

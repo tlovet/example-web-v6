@@ -16,11 +16,12 @@ import {
   ProFormText,
 } from '@ant-design/pro-components';
 import { useEmotionCss } from '@ant-design/use-emotion-css';
-import { FormattedMessage, Helmet, history, SelectLang, useIntl, useModel } from '@umijs/max';
-import { Alert, message, Tabs } from 'antd';
+import { FormattedMessage, Helmet, SelectLang, history, useIntl, useModel } from '@umijs/max';
+import { Alert, Tabs, message } from 'antd';
 import React, { useState } from 'react';
 import { flushSync } from 'react-dom';
 import Settings from '../../../../config/defaultSettings';
+// import logo from '@/assets/logo.png';
 
 const ActionIcons = () => {
   const langClassName = useEmotionCss(({ token }) => {
@@ -61,11 +62,7 @@ const Lang = () => {
     };
   });
 
-  return (
-    <div className={langClassName} data-lang>
-      {SelectLang && <SelectLang />}
-    </div>
-  );
+  return <div className={langClassName}>{SelectLang && <SelectLang />}</div>;
 };
 
 const LoginMessage: React.FC<{
@@ -106,8 +103,8 @@ const Login: React.FC = () => {
     const userInfo = await initialState?.fetchUserInfo?.();
     if (userInfo) {
       flushSync(() => {
-        setInitialState((s) => ({
-          ...s,
+        setInitialState((preInitialState: any) => ({
+          ...preInitialState,
           currentUser: userInfo,
         }));
       });
